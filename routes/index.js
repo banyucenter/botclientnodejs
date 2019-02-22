@@ -23,11 +23,11 @@ router.post('/send', function (req, res, next) {
     body: sprintf('{"question": "%(pertanyaan)s"}', data),
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'EndpointKey 7739336f-f037-4a10-8513-994031e04a28'
+      'Authorization': 'EndpointKey <your key endpoint>'
     }
   }
 
-  fetch('https://qnanodebotapp.azurewebsites.net/qnamaker/knowledgebases/7b6b8b21-b1a8-4d1d-bee5-6176309488c5/generateAnswer', options)
+  fetch('<your url qna rest api>', options)
     .then(res => res.json())
     .then(json => res.render('index2', {
       title: 'Web Apps Machine Learning Bot Azure',
